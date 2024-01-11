@@ -12,9 +12,9 @@ public class InSceneLevelObject : MonoBehaviour
 	/// When this object is first instantiated track what its prefab index is and create a <see cref="ObjectData"/> for it
 	/// </summary>
 	/// <param name="spawnableID"></param>
-	public void SetUpLevelObject (int spawnableID)
+	public void SetUpLevelObject(int spawnableID)
 	{
-		if(_storedData == null)
+		if (_storedData == null)
 		{
 			_storedData = new ObjectData();
 			_storedData.PrefabID = spawnableID;

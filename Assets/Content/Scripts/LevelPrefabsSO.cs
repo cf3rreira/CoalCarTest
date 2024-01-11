@@ -7,5 +7,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelEditor_SpawnableObjectList", menuName = "CoalCarStudios/LevelEditorSpawnableObjectList", order = 1)]
 public class LevelPrefabsSO : ScriptableObject
 {
-    public List<GameObject> LevelEditorSpawnableObjects = new List<GameObject>();
+	public List<GameObject> LevelEditorSpawnableObjects = new List<GameObject>();
 }

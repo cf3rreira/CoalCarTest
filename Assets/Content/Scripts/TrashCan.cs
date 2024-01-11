@@ -27,7 +27,7 @@ public class TrashCan : MonoBehaviour
 	/// </summary>
 	public void EmptyTrash()
 	{
-		for(int i = 0; i < _objectsToDelete.Count; i++)
+		for (int i = 0; i < _objectsToDelete.Count; i++)
 		{
 			Destroy(_objectsToDelete[i]);
 		}

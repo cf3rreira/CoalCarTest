@@ -10,7 +10,7 @@ public class LevelEditorInSceneManager : MonoBehaviour
 {
 	//Variables
 	[SerializeField]
-    private LevelPrefabsSO _levelPrefabsList = null;
+	private LevelPrefabsSO _levelPrefabsList = null;
 	[SerializeField]
 	private GameObject _defaultSpawnLocation = null;
 
@@ -32,9 +32,9 @@ public class LevelEditorInSceneManager : MonoBehaviour
 	/// Called from the GUI to save the level
 	/// </summary>
 	public void SaveCurrentLevel()
-    {
+	{
 		List<InSceneLevelObject> levelObjects = GetComponentsInChildren<InSceneLevelObject>().ToList();
-		
+
 		if (_currentLevelData == null)
 		{
 			_currentLevelData = new LevelData();
@@ -57,8 +57,8 @@ public class LevelEditorInSceneManager : MonoBehaviour
 	/// <summary>
 	/// Called from the GUI to load a saved level
 	/// </summary>
-    public void LoadLevel()
-    {
+	public void LoadLevel()
+	{
 		List<InSceneLevelObject> levelObjects = GetComponentsInChildren<InSceneLevelObject>().ToList();
 		for (int i = 0; i < levelObjects.Count; i++)
 		{
@@ -89,12 +89,12 @@ public class LevelEditorInSceneManager : MonoBehaviour
 	/// </summary>
 	/// <param name="objectID"> The object ID from <see cref="LevelPrefabsSO"/></param>
 	public GameObject SpawnNewLevelObjectFromID(int objectID)
-    {
+	{
 		GameObject spawnedObj = null;
-		
+
 		if (_levelPrefabsList.LevelEditorSpawnableObjects[objectID] != null)
-        {
-			spawnedObj = Instantiate(_levelPrefabsList.LevelEditorSpawnableObjects[objectID], _defaultSpawnVector, Quaternion.identity,gameObject.transform);
+		{
+			spawnedObj = Instantiate(_levelPrefabsList.LevelEditorSpawnableObjects[objectID], _defaultSpawnVector, Quaternion.identity, gameObject.transform);
 			spawnedObj.AddComponent<InSceneLevelObject>().SetUpLevelObject(objectID);
 		}
 		return spawnedObj;
